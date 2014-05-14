@@ -1,3 +1,11 @@
+/*
+TODOS
+=====
+- add labels on hover
+- add animation on enter
+
+*/
+
   console.log("starting codes");
 
   var data = [
