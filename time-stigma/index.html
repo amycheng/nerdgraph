@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    #graph {
+      width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    #drawing {
+      width: 600px;
+      height: 600px;
+      border: 1px solid #000;
+    }
+
+    .axis-label{
+      position: absolute;
+    }
+
+    .y-axis{
+      left: 45%;
+    }
+
+    .x-axis {
+      top: 45%;
+    }
+
+    #more-time{
+      bottom: 0;
+    }
+
+    #more-stigma{
+      right: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Graph of Nerd Hobbies!</h1>
+  <div id="graph">
+
+    <h3 id="less-time" class="y-axis axis-label">less time</h3>
+    <h3 id="more-time" class="y-axis axis-label">more time</h3>
+    <h3 id="less-stigma" class="x-axis axis-label">less stigma</h3>
+    <h3 id="more-stigma" class="x-axis axis-label">more stigma</h3>
+
+    <svg id="drawing">
+       <line x1="0" y1="300" x2="600" y2="300" style="stroke:rgb(255,0,0);stroke-width:1" />
+       <line x1="300" y1="0" x2="300" y2="600" style="stroke:rgb(255,0,0);stroke-width:1" />
+    </svg>
+  </div>
+
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
