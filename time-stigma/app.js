@@ -6,14 +6,14 @@
     {"name":"reading sci fi","stigma":3,"time":4},
     {"name":"reading fantasy","stigma":4,"time":4},
     {"name":"playing Halo","stigma":5,"time":7},
-    {"name":"playing Final Fantasy","stigma":7,"time":8},
+    {"name":"playing Final Fantasy","stigma":7,"time":9},
     {"name":"reading comic books","stigma":6,"time":3},
     {"name":"wargaming","stigma":9,"time":10},
     {"name":"tabletop gaming","stigma":8,"time":7},
     {"name":"RPG","stigma":10,"time":10},
     {"name":"LARP","stigma":11,"time":10},
-    {"name":"Magic: The Gathering","stigma":8,"time":8},
-    {"name":"making a web page","stigma":3,"time":7},
+    {"name":"Magic: The Gathering","stigma":8,"time":7},
+    {"name":"making a web page","stigma":3,"time":8},
     {"name":"watching sports","stigma":2,"time":6}
   ]
   ;
