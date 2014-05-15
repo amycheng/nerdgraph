@@ -1,8 +1,6 @@
 /*
 TODOS
 =====
-- add labels on hover
-- add animation on enter
 - add collision detection
 */
 
@@ -47,30 +45,34 @@ var tooltip = function(posX,posY,text){
   };
 
 
-
 var _map = d3.scale.linear()
     .domain([0, 10])
     .range([0, 500]);
 
-/*
-d3.select("body").selectAll("p")
-    .data(data)
-    .enter()
-    .append("p")
-    .text(function(d) { return d.name; });
-*/
-
-graph.selectAll("circle")
+var points =
+    graph.selectAll("circle")
    .data(data)
    .enter()
-   .append("circle")
+   .append("circle");
+
+   points
+    .attr('cx',300)
+    .attr('cy',300);
+
+   points
+    .transition()
+    .ease("bounce")
+    .delay(500)
    .attr("cx", function(d) {
         return _map(d["stigma"]);
    })
    .attr("cy", function(d) {
         return _map(d["time"]);
    })
-   .attr("r", 10)
+   .attr("r", 10);
+
+
+   points
    .on('mouseover',function(d){
     console.log("ping");
     return tooltip(_map(d["stigma"])+10,_map(d["time"]),d["name"]);
@@ -79,18 +81,3 @@ graph.selectAll("circle")
       var el = document.body.querySelector("#label");
       el.remove();
    });
-/*
-graph.selectAll("text")
-   .data(data)
-   .enter()
-   .append("text")
-   .text(function(d) {
-        return d["name"];
-   })
-   .attr("x", function(d) {
-        return _map(d["stigma"])+10;
-   })
-   .attr("y", function(d) {
-        return _map(d["time"])+10;
-   });
-*/
