@@ -3,7 +3,7 @@ TODOS
 =====
 - add labels on hover
 - add animation on enter
-
+- add collision detection
 */
 
   console.log("starting codes");
@@ -22,7 +22,8 @@ TODOS
     {"name":"LARP","stigma":11,"time":10},
     {"name":"Magic: The Gathering","stigma":8,"time":7},
     {"name":"making a web page","stigma":3,"time":8},
-    {"name":"watching sports","stigma":2,"time":6}
+    {"name":"watching sports","stigma":2,"time":6},
+    {"name":"watching anime","stigma":7,"time":5}
   ]
   ;
 
@@ -32,13 +33,24 @@ var graph = d3.select("svg");
 var _size = 600;
 
 
-var label = function(posX,posY,text){
+var tooltip = function(posX,posY,text){
+    var el =d3.select("body")
+    .select("div")
+    .append("div")
+    .attr("id","label")
+    .style("position", "absolute")
+    .style("top",posY)
+    .style("left",posX)
+    .text(text);
 
-};
+    return el;
+  };
+
+
 
 var _map = d3.scale.linear()
     .domain([0, 10])
-    .range([0, 550]);
+    .range([0, 500]);
 
 /*
 d3.select("body").selectAll("p")
@@ -58,8 +70,16 @@ graph.selectAll("circle")
    .attr("cy", function(d) {
         return _map(d["time"]);
    })
-   .attr("r", 5);
-
+   .attr("r", 10)
+   .on('mouseover',function(d){
+    console.log("ping");
+    return tooltip(_map(d["stigma"])+10,_map(d["time"]),d["name"]);
+   })
+   .on("mouseout",function(){
+      var el = document.body.querySelector("#label");
+      el.remove();
+   });
+/*
 graph.selectAll("text")
    .data(data)
    .enter()
@@ -73,3 +93,4 @@ graph.selectAll("text")
    .attr("y", function(d) {
         return _map(d["time"])+10;
    });
+*/
