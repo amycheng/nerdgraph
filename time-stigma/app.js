@@ -7,7 +7,7 @@ TODOS
   console.log("starting codes");
 
   var data = [
-    {"name":"cosplay","stigma":8,"time":9},
+    {"name":"cosplay","stigma":8,"time":10},
     {"name":"writing fanfiction","stigma":8,"time":7},
     {"name":"reading sci fi","stigma":3,"time":4},
     {"name":"reading fantasy","stigma":4,"time":4},
@@ -16,8 +16,8 @@ TODOS
     {"name":"reading comic books","stigma":6,"time":3},
     {"name":"wargaming","stigma":9,"time":10},
     {"name":"tabletop gaming","stigma":8,"time":7},
-    {"name":"RPG","stigma":10,"time":10},
-    {"name":"LARP","stigma":11,"time":10},
+    {"name":"RPG","stigma":8,"time":9},
+    {"name":"LARP","stigma":10,"time":10},
     {"name":"Magic: The Gathering","stigma":8,"time":7},
     {"name":"making a web page","stigma":3,"time":8},
     {"name":"watching sports","stigma":2,"time":6},
@@ -53,7 +53,8 @@ var points =
     graph.selectAll("circle")
    .data(data)
    .enter()
-   .append("circle");
+   .append("circle")
+   .attr("fill","#7f7f7f");
 
    points
     .attr('cx',300)
